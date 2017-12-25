@@ -1,6 +1,7 @@
-package cn.codingxiaxw.dao;
+package com.cainiao.dao;
 
-import cn.codingxiaxw.entity.SuccessKilled;
+
+import com.cainiao.entity.SuccessKilled;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

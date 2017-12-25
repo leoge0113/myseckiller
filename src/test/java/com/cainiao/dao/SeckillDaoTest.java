@@ -1,6 +1,6 @@
-package cn.codingxiaxw.daovvv;
+package com.cainiao.dao;
 
-import cn.codingxiaxw.entity.Seckill;
+import com.cainiao.entity.Seckill;
 import com.sun.xml.internal.rngom.binary.DataExceptPattern;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package cn.codingxiaxw.service;
+package com.cainiao.service;
 
 import cn.codingxiaxw.dto.Exposer;
 import cn.codingxiaxw.dto.SeckillExecution;
