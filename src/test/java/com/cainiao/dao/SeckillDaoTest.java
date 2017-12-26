@@ -1,7 +1,7 @@
 package com.cainiao.dao;
 
 import com.cainiao.entity.Seckill;
-import com.sun.xml.internal.rngom.binary.DataExceptPattern;
+//import com.sun.xml.internal.rngom.binary.DataExceptPattern;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by codingBoy on 16/11/27.
+
  * 配置spring和junit整合，这样junit在启动时就会加载spring容器
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -30,7 +30,7 @@ public class SeckillDaoTest {
 
     @Test
     public void queryById() throws Exception {
-        long seckillId=1000;
+        long seckillId=3;
         Seckill seckill=seckillDao.queryById(seckillId);
         System.out.println(seckill.getName());
         System.out.println(seckill);

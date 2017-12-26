@@ -1,5 +1,5 @@
-package com.cainiao.execption;
+package com.cainiao.exception;
 
-public class SeckillCloseExecution extends SeckillExecution{
-    public SeckillCloseExecution(String msg){super(msg);}
+public class SeckillCloseException extends SeckillException {
+    public SeckillCloseException(String msg){super(msg);}
 }
