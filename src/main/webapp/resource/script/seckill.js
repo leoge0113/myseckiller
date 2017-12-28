@@ -48,7 +48,7 @@ var seckill = {
                     console.log("inputPhone: " + inputPhone);
                     if (seckill.validatePhone(inputPhone)) {
                         //电话写入cookie(7天过期)
-                        $.cookie('userPhone', inputPhone, {expires: 7, path: '/seckill'});
+                        $.cookie('userPhone', inputPhone, {expires: 7, path: '/myseckill'});
                         //验证通过　　刷新页面
                         window.location.reload();
                     } else {
