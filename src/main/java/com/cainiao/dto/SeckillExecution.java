@@ -1,7 +1,7 @@
 package com.cainiao.dto;
 
-import com.cainiao.entity.SuccessKilled;
 import com.cainiao.enumer.SeckillStatEnum;
+import com.cainiao.entity.SuccessKilled;
 
 public class SeckillExecution {
 

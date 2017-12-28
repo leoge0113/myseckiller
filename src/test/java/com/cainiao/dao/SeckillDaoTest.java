@@ -12,8 +12,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
 
  * 配置spring和junit整合，这样junit在启动时就会加载spring容器

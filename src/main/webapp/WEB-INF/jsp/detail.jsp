@@ -38,7 +38,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title text-center">
-                    <span class="glyphicon glyphicon-phone"> </span>秒杀电话:
+                    <span class="glyphicon glyphicon-phone"> </span>电话:
                 </h3>
             </div>
 

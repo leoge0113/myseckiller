@@ -16,7 +16,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名称</th>
+                    <th>名称</th> <!-- head-->
                     <th>库存</th>
                     <th>开始时间</th>
                     <th>结束时间</th>
@@ -38,7 +38,7 @@
                         <td>
                             <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
-                        <td><a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank">详情</a></td>
+                        <td><a class="btn btn-info" href="/myseckill/${sk.seckillId}/detail" target="_blank">详情</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -56,4 +56,5 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
+</html>
 </html>

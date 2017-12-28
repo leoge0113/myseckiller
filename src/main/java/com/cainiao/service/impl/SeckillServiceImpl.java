@@ -3,27 +3,25 @@ package com.cainiao.service.impl;
 import com.cainiao.dao.SeckillDao;
 import com.cainiao.dao.SuccessKilledDao;
 import com.cainiao.dto.Exposer;
-import com.cainiao.dto.SeckillExecution;
-import com.cainiao.entity.Seckill;
-import com.cainiao.entity.SuccessKilled;
 import com.cainiao.enumer.SeckillStatEnum;
 import com.cainiao.exception.RepeatSeckillException;
 import com.cainiao.exception.SeckillCloseException;
 import com.cainiao.exception.SeckillException;
 import com.cainiao.service.SeckillService;
-import org.apache.ibatis.logging.LogFactory;
+import com.cainiao.dto.SeckillExecution;
+import com.cainiao.entity.Seckill;
+import com.cainiao.entity.SuccessKilled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
-import sun.rmi.runtime.Log;
 
 import java.util.Date;
 import java.util.List;
 @Service
-public class SeckillServiceImpl implements SeckillService{
+public class SeckillServiceImpl implements SeckillService {
     @Autowired
     private SeckillDao seckillDao;
     @Autowired
