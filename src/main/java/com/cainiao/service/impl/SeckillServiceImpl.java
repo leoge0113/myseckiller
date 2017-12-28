@@ -92,5 +92,4 @@ public class SeckillServiceImpl implements SeckillService{
             throw new SeckillException("Inner error：" + e.getMessage());
         }
     }
-
 }
