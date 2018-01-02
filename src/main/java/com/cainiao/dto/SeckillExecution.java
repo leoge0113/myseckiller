@@ -21,6 +21,7 @@ public class SeckillExecution {
         this.seckillId = seckillId;
         this.state = statEnum.getState();
         this.stateInfo = statEnum.getInfo();
+
         this.successKilled = successKilled;
     }
 
@@ -40,7 +41,7 @@ public class SeckillExecution {
     }
 
     public int getState() {
-        return state;
+        return this.state;
     }
 
     public void setState(int state) {

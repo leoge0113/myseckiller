@@ -42,11 +42,19 @@ public class SeckillController {
             return "forward:/seckill/list";
         }
         model.addAttribute("seckill", seckill);
-        logger.info(seckill.toString());
+        //logger.info(seckill.toString());
         return "detail";
     }
 
     //ajax
+    //获取系统时间
+    @RequestMapping(value = "/time/now",method = RequestMethod.GET)
+    @ResponseBody
+    public SeckillResult<Long> time()
+    {
+        Date now = new Date();
+        return new SeckillResult<Long>(true,now.getTime());
+    }
     @RequestMapping(value = "/{seckillId}/exposer",
                     method = RequestMethod.GET,
                     produces = {"application/json;charset=UTF-8"})
@@ -78,34 +86,26 @@ public class SeckillController {
         {
             return new SeckillResult<SeckillExecution>(false,"未注册");
         }
-        SeckillResult<SeckillExecution> result;
 
         try {
             SeckillExecution execution = seckillService.executeSeckill(seckillId, userPhone, md5);
             return new SeckillResult<SeckillExecution>(true, execution);
         }catch (RepeatSeckillException e1)
         {
-            SeckillExecution execution=new SeckillExecution(seckillId, SeckillStatEnum.REPEAT_KILL);
+            SeckillExecution execution = new SeckillExecution(seckillId, SeckillStatEnum.REPEAT_KILL);
             return new SeckillResult<SeckillExecution>(true,execution);
         }catch (SeckillCloseException e2)
         {
-            SeckillExecution execution=new SeckillExecution(seckillId, SeckillStatEnum.END);
+            SeckillExecution execution = new SeckillExecution(seckillId, SeckillStatEnum.END);
             return new SeckillResult<SeckillExecution>(true,execution);
         }
         catch (Exception e)
         {
-            SeckillExecution execution=new SeckillExecution(seckillId, SeckillStatEnum.INNER_ERROR);
+            SeckillExecution execution=new SeckillExecution(seckillId, SeckillStatEnum.INNER_ERROR);//
             return new SeckillResult<SeckillExecution>(true,execution);
         }
 
     }
 
-    //获取系统时间
-    @RequestMapping(value = "/time/now",method = RequestMethod.GET)
-    @ResponseBody
-    public SeckillResult<Long> time()
-    {
-        Date now = new Date();
-        return new SeckillResult<Long>(true,now.getTime());
-    }
+
 }

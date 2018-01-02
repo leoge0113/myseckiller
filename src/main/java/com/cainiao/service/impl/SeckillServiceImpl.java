@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
@@ -59,7 +60,7 @@ public class SeckillServiceImpl implements SeckillService {
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
         return md5;
     }
-    @Transactional
+    @Transactional( isolation = Isolation.REPEATABLE_READ)
     public SeckillExecution executeSeckill(long seckillId, long phone, String md5)
             throws SeckillException, SeckillCloseException, RepeatSeckillException {
         if (md5 == null || !md5.equals(getMD5(seckillId))){
