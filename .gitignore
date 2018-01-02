@@ -1,4 +1,4 @@
 .idea/
 /target/
-src/main/resources/jdbc.properties
+*.properties
 /myseckill.iml
