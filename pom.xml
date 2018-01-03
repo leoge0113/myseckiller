@@ -79,6 +79,7 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    <!--rest api-->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
