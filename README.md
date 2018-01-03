@@ -4,14 +4,16 @@
 期望有时间再优化。
 
 ## 开发笔记
-### bootstrip
-- .container 类
-
-用于固定宽度并支持响应式布局的容器。
 
 ### 浏览器清缓存
-ctr+shit+r 清空缓存刷新
-或者F12， network 那边找disable cache
+- idea run/debug configuration
+
+
+- 代码热替换，修改代码js,jsp后无需重启tomcat
+
+- ctr+shit+r 清空缓存刷新
+或者F12， network 那边找disable cache,打钩。
+
 https://www.cnblogs.com/niflhum/p/7084111.html
 ### spring bean生命周期
 在Spring容器中Bean的作用域分为singleton、prototype。对于这两种Bean的作用域简单谈一下个人的认识，singleton的对象为单例模式，这样的对象在Spring的容器中只维持一个，需要的时候可以来取，也就是说这个对象将自己的控制权交给了Spring容器，那么他什么时候创建(单例的对象在加载配置文件的时候创建)与销毁取决于Spring容器而不是取决于Bean类本身。而prototype类型的对象，并不是完全交给Spring容器进行管理的，创建的时候需要Spring容器进行创建，但是销毁的时候并不取决于Spring容器，取决于客户端，当客户端访问的时候由Spring创建对象，客户端访问完成后，Bean对象处于未引用的状态下，就会被JVM自动回收。
@@ -96,11 +98,61 @@ mybatis全局配置,应该是可以做驼峰命名转换的。
 ```
 ### 使用过的页面标签
 原生html标签；bootstrap的标签。
-<div 
-<h2
-<span
-<button
-<input 
+```html
+<body>
+<div class="container"><!--<div标签;class="container"给标签加上样式-->
+    <div class="panel panel-default text-center">
+        <div class="pannel-heading">
+            <h1>${seckill.name}</h1>
+        </div>
+
+        <div class="panel-body">
+            <h2 class="text-danger">
+                <%--显示time图标--%>
+                <span class="glyphicon glyphicon-time"></span><!--<span> 在CSS定义中属于一个行内元素,在行内定义一个区域-->
+                <%--展示倒计时--%>
+                <span class="glyphicon" id="seckill-box"></span>
+            </h2>
+        </div>
+    </div>
+</div>
+<%--登录弹出层 输入电话--%>
+<div id="killPhoneModal" class="modal fade">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">
+                    <span class="glyphicon glyphicon-phone"> </span>电话:
+                </h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <input type="text" name="killPhone" id="killPhoneKey"
+                               placeholder="填写手机号^o^" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <%--验证信息--%>
+                <span id="killPhoneMessage" class="glyphicon"> </span>
+                <button type="button" id="killPhoneBtn" class="btn btn-success">
+                    <span class="glyphicon glyphicon-phone"></span>
+                    Submit
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+```
 
 ### 泛型使用
 ```
